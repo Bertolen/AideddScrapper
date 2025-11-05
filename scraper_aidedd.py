@@ -12,8 +12,6 @@ import csv
 import time
 import sys
 from urllib.parse import urljoin
-import re
-from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def get_spell_classes(spell_url, headers, base_url):
     """
@@ -293,7 +291,7 @@ def save_to_csv(data, filename):
     
     try:
         with open(filename, 'w', newline='', encoding='utf-8-sig') as csvfile:
-            writer = csv.writer(csvfile, delimiter=';', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
             
             for row in data:
                 writer.writerow(row)
