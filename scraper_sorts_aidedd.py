@@ -222,7 +222,8 @@ def get_spells_data_with_classes(url):
         print("⚠️  Cela peut prendre quelques minutes...")
         
         # Extraction des informations de classe pour chaque sort
-        base_url_for_spells = "https://www.aidedd.org/spell/"
+        #base_url_for_spells = "https://www.aidedd.org/spell/" # version 2024
+        base_url_for_spells = "" # version 2014
         
         for i, (row_data, spell_link) in enumerate(zip(data_rows, spell_links_data)):
             print(f"📜 Traitement du sort {i+1}/{len(data_rows)}: {row_data[1] if len(row_data) > 1 else 'N/A'}")
@@ -293,7 +294,8 @@ def main():
     print("=== SCRAPER AIDEDD.ORG - SORTS D&D AVEC CLASSES ===\n")
     
     # URL de base
-    url = "https://www.aidedd.org/spell/fr/"
+    #url = "https://www.aidedd.org/spell/fr/" # version 2024
+    url = "https://www.aidedd.org/dnd-filters/sorts.php" # version 2014
     
     # Nom du fichier de sortie
     output_file = "sorts_dnd_aidedd_avec_classes.csv"

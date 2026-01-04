@@ -155,7 +155,8 @@ def get_items_data(url):
         print("⚠️  Cela peut prendre quelques minutes...")
 
         # Extraction du lien pour chaque objet
-        base_url_for_items = "https://www.aidedd.org/magic-item/"
+        #base_url_for_items = "https://www.aidedd.org/magic-item/" # version 2024
+        base_url_for_items = "" # version 2014
 
         for i, (row_data, item_link) in enumerate(zip(data_rows, item_links_data)):
             print(f"📜 Traitement de l'objet {i+1}/{len(data_rows)}: {row_data[1] if len(row_data) > 1 else 'N/A'}")
@@ -215,7 +216,8 @@ def main():
     print("=== SCRAPER AIDEDD.ORG - OBJETS D&D ===\n")
     
     # URL de base
-    url = "https://www.aidedd.org/magic-item/fr/"
+    #url = "https://www.aidedd.org/magic-item/fr/" # version 2024
+    url = "https://www.aidedd.org/dnd-filters/objets-magiques.php" # version 2014
 
     # Nom du fichier de sortie
     output_file = "objets_dnd_aidedd.csv"
